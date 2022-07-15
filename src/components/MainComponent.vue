@@ -67,6 +67,42 @@
         <div class="banner-in-banner" id="bot-banner"></div>
         <h2>GO AHEAD AND<br>BUILD YOUR<br>OWN PIZZA<br>WE WON'T<br>JUDGE!</h2>
     </section>
+
+    <!-- TEAM -->
+    <section class="teams flex">
+        <div class="team-card">
+            <img src="../assets/img/h1-team-1a-700x700.jpg" alt="team member 1">
+            <div class="info-card">
+                <h3>FRANK BAILEY</h3>
+                <div class="job">Kitchen Porter</div>
+                <div>socials</div>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="../assets/img/h1-team-2a.jpg" alt="team member 2">
+            <div class="info-card">
+                <h3>FRANK BAILEY</h3>
+                <div class="job">Kitchen Porter</div>
+                <div>socials</div>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="../assets/img/h1-team-3a.jpg" alt="team member 3">
+            <div class="info-card">
+                <h3>FRANK BAILEY</h3>
+                <div class="job">Kitchen Porter</div>
+                <div>socials</div>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="../assets/img/h1-team-4a.jpg" alt="team member 4">
+            <div class="info-card">
+                <h3>FRANK BAILEY</h3>
+                <div class="job">Kitchen Porter</div>
+                <div>socials</div>
+            </div>
+        </div>
+    </section>
   </main>
 </template>
 
@@ -212,6 +248,50 @@ export default {
             color: $txt-white-1;
             font-size: 55px;
             line-height: 60px;
+        }
+    }
+
+    // TESTIMONIALS
+    .teams {
+        padding-block: 6px;
+
+        .team-card {
+            width: calc(100% / 4);
+
+            img {
+                width: 100%;
+            }
+
+            .info-card {
+                width: 100%;
+                height: 100%;
+                background-color: $bg-red-3;
+                display: none;
+                border: 25px solid $border-white-1;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: $txt-white-1;
+
+                h3 {
+                    font-size: 25px;
+                    font-weight: 400;
+                }
+
+                .job {
+                    font-size: 15px;
+                    font-weight: 300;
+                    padding-bottom: 15px;
+                }
+            }
+
+            &:hover img {
+                display: none;
+            }
+
+            &:hover div {
+                display: flex;
+            }
         }
     }
 </style>
