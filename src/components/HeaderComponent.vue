@@ -5,11 +5,11 @@
             <button>ORDER ONLNE</button>
         </div>
         <div class="list flex">
-            <ul v-for="element, index in navBeforeImg" :key="index">{{element}}</ul>
+            <ul v-for="element, index in navBeforeImg" :key="'a' + index">{{element}}</ul>
             <div class="logo">
                 <img src="../assets/img/h5-logo-divided-header.png" alt="logo">
             </div>
-            <ul v-for="element, index in navAfterImg" :key="index">{{element}}</ul>
+            <ul v-for="element, index in navAfterImg" :key="'b' + index">{{element}}</ul>
         </div>
         <div class="user-utilities flex">
             <div class="cart">CART</div>

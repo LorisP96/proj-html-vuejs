@@ -32,6 +32,6 @@ export default {
 #app {
   font-family: 'Oswald', sans-serif;
   color: $txt-black-4;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 </style>
