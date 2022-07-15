@@ -1,17 +1,27 @@
 <template>
   <div id="app">
-    <HeaderComponent/>
+    <HeaderComponent :navBeforeImg='navBeforeImg' :navAfterImg='navAfterImg' />
+    <MainComponent/>
   </div>
 </template>
 
 <script>
-import HeaderComponent from './components/HeaderComponent.vue'
+import HeaderComponent from './components/HeaderComponent.vue';
+import MainComponent from './components/MainComponent.vue';
+
 
 export default {
   name: 'App',
   components: {
     HeaderComponent,
-  }
+    MainComponent,
+  },
+  data(){
+    return {
+    navBeforeImg: ['HOME','PAGES','MENU'],
+    navAfterImg: ['EVENT','BLOG','LANDING'],
+    }
+  } 
 }
 </script>
 
@@ -22,5 +32,6 @@ export default {
 #app {
   font-family: 'Oswald', sans-serif;
   color: $txt-black-4;
+  letter-spacing: 3px;
 }
 </style>

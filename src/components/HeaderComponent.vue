@@ -11,7 +11,7 @@
             </div>
             <ul v-for="element, index in navAfterImg" :key="index">{{element}}</ul>
         </div>
-        <div class="user-utilities">
+        <div class="user-utilities flex">
             <div class="cart">CART</div>
             <div class="search">SEARCH</div>
         </div>
@@ -24,11 +24,9 @@
 
 <script>
 export default {
-    data() {
-        return {
-            navBeforeImg: ['HOME','PAGES','MENU'],
-            navAfterImg: ['EVENT','BLOG','LANDING']
-        }
+    props: {
+        navBeforeImg: Array,
+        navAfterImg: Array,
     }
 }
 </script>
@@ -44,51 +42,53 @@ export default {
         background-color: $bg-black-2;
         color: $txt-white-1;
         font-weight: 400;
-        font-size: 14px;
-        letter-spacing: 4px;
+        font-size: 12px;
         nav {
-            width: 70%;
+            width: 65%;
             margin: 0 auto;
             justify-content: space-between;
             align-items: center;
 
             .btn {
 
-                padding: 0 25px;
+                padding-right: 25px;
 
                 button {
-                    padding: 18px 32px;
+                    padding: 14px 28px;
                     background-color: $bg-red-3;
                     color: $txt-white-1;
                     font-family: inherit;
+                    font-size: inherit;
                     letter-spacing: 4px;
+                    cursor: pointer;
+                    border-color: $border-red;
                 }
             }
 
             .list {
                 flex-grow: 1;
+                max-width: 60%;
                 justify-content: center;
                 align-items: center;
                 height: 100%;
-                padding: 0 40px;
+                padding: 0 20px;
 
                 ul {
                     flex-grow: 1;
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: space-evenly;
                 }
 
                 img {
                     flex-shrink: 1;
-                    height: 170px;
-                    padding: 25px 0;
+                    height: 150px;
+                    padding: 25px;
                 }
             }
 
             .user-utilities {
                 div {
-                    display: inline-block;
-                    padding: 0 25px;
+                    padding: 0 10px;
                 }
             }
         }
