@@ -31,13 +31,13 @@
         </div>
         <div class="special">
             <h2>SPECIALS*</h2>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quam aliquid possimus </span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quam aliquid possimus </p>
             <ul class="special-list">
                 <li class="flex">
                     <div class="price">$10</div>
                     <div class="list-product">
                         <h3>COMBO PICCOLO</h3>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quam aliquid possimus </span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quam aliquid possimus </p>
                     </div>
                 </li>
 
@@ -45,7 +45,7 @@
                     <div class="price">$20</div>
                     <div class="list-product">
                         <h3>COMBO MEDIO</h3>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quam aliquid possimus </span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quam aliquid possimus </p>
                     </div>
                 </li>
 
@@ -53,7 +53,7 @@
                     <div class="price">$30</div>
                     <div class="list-product">
                         <h3>COMBO GRANDE</h3>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quam aliquid possimus</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quam aliquid possimus</p>
                     </div>
                 </li>
             </ul>
@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="team-card">
-            <img src="../assets/img/h1-team-3a.jpg" alt="team member 3">
+            <img src="../assets/img/h1-team-4a.jpg" alt="team member 3">
             <div class="info-card">
                 <h3>FRANK BAILEY</h3>
                 <div class="job">Kitchen Porter</div>
@@ -95,7 +95,7 @@
             </div>
         </div>
         <div class="team-card">
-            <img src="../assets/img/h1-team-4a.jpg" alt="team member 4">
+            <img src="../assets/img/h1-team-3a.jpg" alt="team member 4">
             <div class="info-card">
                 <h3>FRANK BAILEY</h3>
                 <div class="job">Kitchen Porter</div>
@@ -103,12 +103,54 @@
             </div>
         </div>
     </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="test-cont flex">
+            <div class="test-card">
+                <img src="../assets/img/h1-clients-img-4.png" alt="">
+                
+            </div>
+            <div class="test-card">
+                <img src="../assets/img/h1-clients-img-3.png" alt="">
+            </div>
+            <div class="test-card">
+                <img src="../assets/img/h1-clients-img-1.png" alt="">
+            </div>
+            <div class="test-card">
+                <img src="../assets/img/h1-clients-img-2.png" alt="">
+            </div>
+            <div class="test-card">
+                <img src="../assets/img/h1-clients-img-5.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- PIZZA -->
+    <section class="pizza">
+        <div class="pizza-title">
+            <h6>CHOOSE YOUR FLAVOR</h6>
+            <h2>THE BEST PIZZA MENU IN TOWN</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa in reprehenderit explicabo ipsam asperiores cumque ea consequuntur nemo porro.</p>
+        </div>
+        <div class="pizza-list">
+            <ul class="flex">
+                <li v-for="pizza, index in pizzaMenu" :key="index">
+                    <img :src="pizza.img" :alt="index">
+                    <h5 class="pizza-name">{{pizza.name}}</h5>
+                    <h5 class="pizza-price"><span v-if="pizza.oldPrice !== ''">{{pizza.oldPrice}}</span> {{pizza.price}}</h5>
+                </li>
+            </ul>
+        </div>
+    </section>
   </main>
 </template>
 
 <script>
 export default {
-
+    props: {
+        pizzaMenu: Array,
+    }
 }
 </script>
 
@@ -117,15 +159,11 @@ export default {
     @import '../assets/scss/style.scss';
     // INTRO
     .intro {
-        padding: 6px 0;
+        padding: 8px 0;
         justify-content: space-between;
 
         .intro-card {
-            width: calc((100% / 4) - 6px);
-
-            img {
-                width: 100%;
-            }
+            width: calc((100% / 4) - 8px);
         }
     }
 
@@ -133,7 +171,7 @@ export default {
     .hello {
         height: 495px;
         background-image: url(../assets/img/h3-testimonials-bckgrnd.jpg);
-        background-position: center;
+        background-position: -200px ;
 
         .washington-review {
             justify-content: center;
@@ -144,17 +182,12 @@ export default {
             margin: 0 auto;
             text-align: center;
             line-height: 31px;
-            
-            h6 {
-                color: $txt-red-1;
-                font-size: 12px;
-            }
         }
     }
 
     // SPECIALS
     .specials-container {
-        padding: 6px 0;
+        padding: 8px 0;
         align-items: center;
 
         .special {
@@ -167,7 +200,7 @@ export default {
                 padding-bottom: 10px;
             }
 
-            span {
+            p {
                 color: $txt-grey-6;
                 display: inline-block;
                 padding-bottom: 15px;
@@ -191,7 +224,7 @@ export default {
                             font-weight: bold;
                         }
 
-                        span {
+                        p {
                             display: inline-block;
                             padding-top: 8px;
                             padding-bottom: 0;
@@ -211,6 +244,7 @@ export default {
             padding-left: 0;
             img {
                 width: 38%;
+                margin: 0 auto;
             }
         }
     }
@@ -251,16 +285,12 @@ export default {
         }
     }
 
-    // TESTIMONIALS
+    // TEAM
     .teams {
-        padding-block: 6px;
+        padding-block: 8px;
 
         .team-card {
             width: calc(100% / 4);
-
-            img {
-                width: 100%;
-            }
 
             .info-card {
                 width: 100%;
@@ -293,5 +323,103 @@ export default {
                 display: flex;
             }
         }
+    }
+
+    // TESTIMONIALS
+    .testimonials {
+        background-color: $bg-white-3;
+
+        .test-cont {
+            width: 60%;
+            margin: 0 auto;
+            align-items: center;
+            padding-block: 90px;
+
+            .test-card {
+                width: calc(100% / 5);
+            }
+        }
+    }
+
+    // PIZZA
+    .pizza {
+        padding-top: 100px;
+        padding-bottom: 150px;
+        .pizza-title {
+            padding-bottom: 70px;
+            width: 40%;
+            margin: 0 auto;
+            text-align: center;
+
+            h2 {
+                padding-bottom: 10px;
+                font-size: 30px;
+                color: $txt-black-3;
+            }
+
+            p {
+                color: $txt-grey-6;
+                font-size: 15px;
+            }
+        }
+        .pizza-list {
+        
+            ul {
+                // nel caso in cui si volessero vedere impostare 
+                // overflow-x auto, impostare justify content baseline e scommentare la scrollbar
+                overflow-x: hidden;
+                justify-content: center;
+
+                // &::-webkit-scrollbar {
+                //     background-color: #434343;
+                //     width: 16px;
+                //     height: 8px;
+                // }
+
+                // &::-webkit-scrollbar-track {
+                //     background-color:#2e2e2e81;
+                // }
+
+                // &::-webkit-scrollbar-thumb {
+                //     background-color: #a4a4a4;
+                //     border-radius: 16px;
+                // }
+
+                // &::-webkit-scrollbar-button {
+                //     display:none;
+                // }
+
+                li {
+                    width: calc(100% / 5.2);
+                    text-align: center;
+                    flex-shrink: 0;
+
+                    img {
+                        width: 60%;
+                        margin: 0 auto;
+                        display: block;
+                    }
+
+                    .pizza-name, .pizza-price {
+                        font-size: 15px;
+                    }
+                    .pizza-name {
+                        padding-top: 15px;
+                        color: $txt-gold-1;
+                    }
+
+                    .pizza-price {
+                        color: $txt-red-1;
+                        padding-top: 3px;
+
+                        span {
+                            color: $txt-white-2;
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 </style>

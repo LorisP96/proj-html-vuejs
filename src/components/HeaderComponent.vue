@@ -42,16 +42,18 @@ export default {
         background-color: $bg-black-2;
         color: $txt-white-1;
         font-weight: 400;
-        font-size: 12px;
+        font-size: 11px;
+        letter-spacing: 3px;
+
+
         nav {
-            width: 65%;
+            width: 70%;
             margin: 0 auto;
             justify-content: space-between;
             align-items: center;
 
             .btn {
-
-                padding-right: 25px;
+                width: 25%;
 
                 button {
                     padding: 14px 28px;
@@ -66,8 +68,9 @@ export default {
             }
 
             .list {
-                flex-grow: 1;
-                max-width: 60%;
+                flex-shrink: 1;
+                justify-self: center;
+                width: 50%;
                 justify-content: center;
                 align-items: center;
                 height: 100%;
@@ -87,6 +90,9 @@ export default {
             }
 
             .user-utilities {
+                width: 25%;
+                justify-content: center;
+
                 div {
                     padding: 0 10px;
                 }
@@ -96,6 +102,12 @@ export default {
         .jumbotron {
             text-align: center;
             padding: 20px 0 70px;
+
+            img {
+                width: auto;
+                height: 100%;
+                display: inline-block;
+            }
         }
     }
 </style>

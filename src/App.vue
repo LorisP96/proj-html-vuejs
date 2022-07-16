@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderComponent :navBeforeImg='navBeforeImg' :navAfterImg='navAfterImg' />
-    <MainComponent/>
+    <MainComponent :pizzaMenu='pizzaMenu' />
   </div>
 </template>
 
@@ -20,6 +20,44 @@ export default {
     return {
     navBeforeImg: ['HOME','PAGES','MENU'],
     navAfterImg: ['EVENT','BLOG','LANDING'],
+    pizzaMenu: [
+      {
+        img: require('./assets/img/h3-product-img-1a-100x100.png'),
+        name: 'BISMARCK',
+        price: '$30.00',
+        oldPrice: '$55.00'
+      },
+      {
+        img: require('./assets/img/h3-product-img-2a-150x150.png'),
+        name: 'FIORI DI ZUCCA',
+        price: '$7.00 - $50.00',
+        oldPrice: ''
+      },
+      {
+        img: require('./assets/img/h3-product-img-3a-150x150.png'),
+        name: 'VALDOSTANA',
+        price: '$55.00',
+        oldPrice: ''
+      },
+      {
+        img: require('./assets/img/h3-product-img-4a-150x150.png'),
+        name: 'PIZZA TARTUFATA',
+        price: '$45.00',
+        oldPrice: ''
+      },
+      {
+        img: require('./assets/img/h3-product-img-5a-150x150.png'),
+        name: 'FRANCESCANA',
+        price: '$25.00',
+        oldPrice: ''
+      },
+      {
+        img: require('./assets/img/h3-product-img-6a-100x100.png'),
+        name: 'CAMPAGNOLA',
+        price: '$50.00 - $95.00',
+        oldPrice: ''
+      },
+    ]
     }
   } 
 }
@@ -32,6 +70,6 @@ export default {
 #app {
   font-family: 'Oswald', sans-serif;
   color: $txt-black-4;
-  letter-spacing: 2px;
+  letter-spacing: 1.2px;
 }
 </style>
