@@ -473,6 +473,7 @@ export default {
     // DEALS
     .deals {
         align-items: flex-start;
+        padding-bottom: 0;
 
         h6 {
             font-weight: 400;
