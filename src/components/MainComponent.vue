@@ -18,9 +18,20 @@
 
     <!-- HELLO -->
     <section class="hello">
+        
         <div class="washington-review flex">
+            <div class="quot-hello"><i class="fa-solid fa-quote-left"></i></div>
             <h3>"FORGET THE TRENDY PIZZA SHOPS, THIS HIDDEN SPOT MAKES THE BEST NEW YORK-STYLE PIZZA SLICE IN NAPLES"</h3>
             <h6>WASHINGTON POST 2018</h6>
+            <div class="dots flex">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+            </div>
+        </div>
+
+        <div class="slice">
+            <img :src="pizzaSlice" alt="pizza-hello">    
         </div>
     </section>
 
@@ -58,12 +69,20 @@
                 </li>
             </ul>
         </div>
+
+        <div class="slice">
+            <img :src="pizzaSlice" alt="pizza-hello">    
+        </div>
     </section>
 
     <!-- BANNER -->
     <section class="banner">
         <div class="banner-in-banner" id="top-banner"></div>
-        <div class="banner-in-banner" id="mid-banner"></div>
+        <div class="banner-in-banner" id="mid-banner">
+            <div class="slice">
+                <img :src="pizzaSlice" alt="pizza-hello">    
+            </div>
+        </div>
         <div class="banner-in-banner" id="bot-banner"></div>
         <h2>GO AHEAD AND<br>BUILD YOUR<br>OWN PIZZA<br>WE WON'T<br>JUDGE!</h2>
     </section>
@@ -102,6 +121,10 @@
                 <div>socials</div>
             </div>
         </div>
+
+        <div class="slice">
+            <img :src="pizzaSlice" alt="pizza-hello">    
+        </div>
     </section>
 
     <!-- TESTIMONIALS -->
@@ -128,6 +151,11 @@
 
     <!-- PIZZA -->
     <section class="pizza">
+
+        <div class="slice">
+            <img :src="pizzaSlice" alt="pizza-hello">    
+        </div>
+
         <div class="pizza-title">
             <h6>CHOOSE YOUR FLAVOR</h6>
             <h2>THE BEST PIZZA MENU IN TOWN</h2>
@@ -197,6 +225,7 @@
 export default {
     props: {
         pizzaMenu: Array,
+        pizzaSlice: String,
     }
 }
 </script>
@@ -218,7 +247,12 @@ export default {
     .hello {
         height: 495px;
         background-image: url(../assets/img/h3-testimonials-bckgrnd.jpg);
-        background-position: -200px ;
+        background-position: -100px ;
+        position: relative;
+
+        .slice {
+            top: 85%;
+        }
 
         .washington-review {
             justify-content: center;
@@ -229,6 +263,28 @@ export default {
             margin: 0 auto;
             text-align: center;
             line-height: 31px;
+
+            .quot-hello {
+                font-size: 75px;
+                color: $txt-gold-1;
+                padding-bottom: 15px;
+            }
+
+            .dots {
+                color: $txt-white-2;
+                padding-top: 25px;
+                font-size: 7px;
+                align-items: center;
+                
+                i {
+                    padding-inline: 3px;
+
+                    &:first-child {
+                        font-size: 9px;
+                        color: $txt-gold-1;
+                    }
+                }
+            }
         }
     }
 
@@ -236,6 +292,11 @@ export default {
     .specials-container {
         padding: 8px 0;
         align-items: center;
+        position: relative;
+
+        .slice {
+            top: 80%;
+        }
 
         .special {
             width: 50%;
@@ -314,6 +375,11 @@ export default {
         #mid-banner {
             background-position: top;
             height: 50%;
+            position: relative;
+
+            .slice {
+                top: 80%;
+            }
         }
 
         #bot-banner {
@@ -335,6 +401,7 @@ export default {
     // TEAM
     .teams {
         padding-block: 8px;
+        position: relative;
 
         .team-card {
             width: calc(100% / 4);
@@ -370,6 +437,10 @@ export default {
                 display: flex;
             }
         }
+
+        .slice{
+            top: 80%;
+        }
     }
 
     // TESTIMONIALS
@@ -392,6 +463,12 @@ export default {
     .pizza {
         padding-top: 100px;
         padding-bottom: 150px;
+        position: relative;
+
+        .slice {
+            top: 28%;
+        }
+
         .pizza-title {
             padding-bottom: 70px;
             width: 40%;
@@ -525,6 +602,20 @@ export default {
         }
         .special:last-child {
             padding: 0;
+        }
+    }
+
+    .slice {
+        position: absolute;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $bg-white-3;
+        display: flex;
+        justify-content: center;
+        img {
+            width: 16px;
         }
     }
 </style>

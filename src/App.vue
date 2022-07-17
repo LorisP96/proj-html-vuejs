@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderComponent :navBeforeImg='navBeforeImg' :navAfterImg='navAfterImg' />
-    <MainComponent :pizzaMenu='pizzaMenu' />
+    <MainComponent :pizzaMenu='pizzaMenu' :pizzaSlice='pizzaSlice'/>
     <FooterComponent/>
   </div>
 </template>
@@ -60,7 +60,8 @@ export default {
         price: '$50.00 - $95.00',
         oldPrice: ''
       },
-    ]
+    ],
+    pizzaSlice: require('./assets/svg/svg-4.svg')
     }
   } 
 }

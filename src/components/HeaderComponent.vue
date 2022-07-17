@@ -21,7 +21,7 @@
                 <img src="../assets/svg/svg-1.svg" alt="">
                 <div class="cart-number">0</div>
             </div>
-            <div>SEARCH</div>
+            <div class="search"><i class="fa-solid fa-magnifying-glass"></i> SEARCH</div>
         </div>
     </nav>
     <div class="jumbotron">
@@ -142,6 +142,12 @@ export default {
                         border-radius: 50%;
                         background-color: $bg-white-1;
                         color: $txt-red-1;
+                    }
+                }
+
+                .search {
+                    i {
+                        font-size: 14px;
                     }
                 }
             }
