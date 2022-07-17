@@ -56,6 +56,11 @@
                 </li>
             </ul>
             <h3 class="about-child">THE DON PEPPE CREW FIRST AND FAREMOST VALUES AN AUTHENTIC, WELL BAKED SLICE OF PIZZA.</h3>
+            <div class="created-by">
+                <span>Created with</span> 
+                <span></span>
+                <span>. by Loris Palazzo</span>
+            </div>
         </div>
         <div class="about-cont"></div>
     </div>
@@ -149,16 +154,18 @@ export default {
 
     .about-cont {
         width: 50%;
-        padding-block: 100px;
+        padding-top: 100px;
         justify-content: center;
 
         &:first-child {
             background-color: $bg-black-1;
             padding-left: 70px;
             padding-right: 100px;
+            flex-wrap: wrap;
 
             .about-child {
                 width: calc(100% / 3);
+                padding-bottom: 120px;
 
                 &:nth-child(2) {
                     padding-left: 10px;
@@ -197,6 +204,24 @@ export default {
                         color: $txt-red-2;
                     }
                 }   
+            }
+
+            h3 {
+                color: $txt-white-1;
+            }
+
+            .created-by {
+                width: 100%;
+                font-size: 11px;
+                padding-bottom: 60px;
+                
+                span {
+                    color: $txt-gold-2;
+
+                    &:last-child {
+                        color: $txt-green;
+                    }
+                }
             }
         }
 
