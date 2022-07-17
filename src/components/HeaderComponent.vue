@@ -5,15 +5,23 @@
             <button>ORDER ONLNE</button>
         </div>
         <div class="list flex">
-            <ul v-for="element, index in navBeforeImg" :key="'a' + index">{{element}}</ul>
+            <ul class="home">
+                <li v-for="element, index in navBeforeImg" :key="'a' + index" >{{ element }}</li>
+            </ul>
             <div class="logo">
                 <img src="../assets/img/h5-logo-divided-header.png" alt="logo">
             </div>
-            <ul v-for="element, index in navAfterImg" :key="'b' + index">{{element}}</ul>
+            <ul>
+                <li v-for="element, index in navAfterImg" :key="'b' + index" >{{ element }}</li>
+            </ul>
         </div>
         <div class="user-utilities flex">
-            <div class="cart">CART</div>
-            <div class="search">SEARCH</div>
+            <div class="cart">
+                <span>CART</span>
+                <img src="../assets/svg/svg-1.svg" alt="">
+                <div class="cart-number">0</div>
+            </div>
+            <div>SEARCH</div>
         </div>
     </nav>
     <div class="jumbotron">
@@ -87,6 +95,19 @@ export default {
                     height: 150px;
                     padding: 25px;
                 }
+
+                .home {
+                    position: relative;
+
+                    li:first-child::before {
+                        content: url(../assets/svg/svg-0.svg);
+                        filter: invert(1);
+                        position: absolute;
+                        top: 0;
+                        left: -12px;
+                        width: 20px;
+                    }
+                }
             }
 
             .user-utilities {
@@ -95,6 +116,33 @@ export default {
 
                 div {
                     padding: 0 10px;
+                }
+
+                .cart {
+                    position: relative;
+
+                    img {
+                        width: 27px;
+                        position: absolute;
+                        top: -3px;
+                        left: -24px;
+                        filter: invert(1);
+                    }
+
+                    .cart-number {
+                        position: absolute;
+                        top: -5px;
+                        left: -30px;
+                        width: 15px;
+                        height: 15px;
+                        padding: 0;
+                        text-align: center;
+                        line-height: 15px;
+                        padding-left: 2px;
+                        border-radius: 50%;
+                        background-color: $bg-white-1;
+                        color: $txt-red-1;
+                    }
                 }
             }
         }
