@@ -4,15 +4,15 @@
     <div class="booking">
         <div class="book-cont flex">
             <div class="book-card flex">
-                <div class="user-input">1 Person</div>
+                <div class="user-input">1 Person <i class="fa-solid fa-user-group"></i></div>
                 <div class="card-child">FOR</div>
             </div>
             <div class="book-card flex">
-                <div class="user-input">11/29/2020</div>
+                <div class="user-input">11/29/2020 <i class="fa-regular fa-calendar"></i></div>
                 <div class="card-child">AT</div>
             </div>
             <div class="book-card flex">
-                <div class="user-input">1 Person</div>
+                <div class="user-input">7:00 PM <i class="fa-regular fa-bell"></i></div>
                 <div class="card-child"></div>
             </div>
             <div class="book-card">
@@ -46,7 +46,7 @@
                 </li>
 
                 <li>
-                    <h5>SATURDAY</h5>
+                    <h5>SATURDAY <span>*</span></h5>
                     <span class="rest-info">Saturday 11am to midnight</span>
                 </li>
 
@@ -54,14 +54,22 @@
                     <h5>SUNDAY</h5>
                     <span class="rest-info">9:00 - 22:00</span>
                 </li>
+
+                <li class="social">
+                    <h5>FOLLOW US:</h5>
+                    <i class="fa-brands fa-twitter"></i> 
+                    <i class="fa-brands fa-facebook-f"></i> 
+                    <i class="fa-brands fa-instagram"></i> 
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </li>
             </ul>
             <h3 class="about-child">THE DON PEPPE CREW FIRST AND FAREMOST VALUES AN AUTHENTIC, WELL BAKED SLICE OF PIZZA.</h3>
             <div class="created-by">
-                <span>Created with</span> 
-                <span></span>
-                <span>. by Loris Palazzo</span>
+                <span>Created with <i class="fa-regular fa-heart"></i>. by</span> 
+                <span> Loris Palazzo</span>
             </div>
         </div>
+        <!-- Background Right -->
         <div class="about-cont"></div>
     </div>
   </footer>
@@ -117,6 +125,7 @@ export default {
             width: 25%;
             justify-content: space-between;
             color: $txt-white-1;
+            position: relative;
 
             .card-child {
                 width: 25%;
@@ -133,6 +142,39 @@ export default {
                 color: $txt-grey-3;
                 font-size: 11px;
                 border: 1px solid $border-black;
+
+                i {
+                    float: right;
+                    display: inline-block;
+                    height: 100%;
+                    line-height: 30px;
+                    color: $txt-gold-2;
+                    font-size: 16px;
+                }
+                // position: relative;
+
+                // &::after {
+                //     font-family: "Font Awesome 5 Free";
+                //     display: inline-block;
+                //     font-weight: 900;
+                //     text-align: right;
+                //     position: absolute;
+                //     top: 10px;
+                //     right: 10px;
+                //     color: $txt-gold-2;
+                // }
+
+                // &:first-child::after {
+                //     content: "\f500";
+                // }
+
+                // &:nth-child(2)::after {
+                //     content: "\f133";
+                // }
+
+                // &:last-child::after {
+                //     content: "\f34e";
+                // }
             }
 
             button {
@@ -191,6 +233,12 @@ export default {
                     h5 {
                         color: $txt-gold-2;
                         font-size: 11.5px;
+
+                        span {
+                            color: $txt-red-1;
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
                     }
 
                     .rest-info {
@@ -203,7 +251,22 @@ export default {
                     .closed {
                         color: $txt-red-2;
                     }
-                }   
+                }
+                
+                .social {
+                    padding-top: 20px;
+
+                    h5 {
+                        display: inline-block;
+                    }
+
+                    i {
+                        display: inline-block;
+                        font-size: 10px;
+                        color: $txt-white-1;
+                        padding-inline: 5px;
+                    }
+                }
             }
 
             h3 {
@@ -220,6 +283,11 @@ export default {
 
                     &:last-child {
                         color: $txt-green;
+                    }
+
+                    i {
+                        display: inline-block;
+                        padding-inline: 2px;
                     }
                 }
             }

@@ -517,6 +517,30 @@ export default {
                     width: calc(100% / 5.2);
                     text-align: center;
                     flex-shrink: 0;
+                    
+
+                    &:nth-child(3) {
+                        position: relative;
+
+                        &::before {
+                            content: url(../assets/svg/svg-5.svg);
+                            width: 50px;
+                            position: absolute;
+                            top: 15px;
+                            right: 80px;
+                            filter: invert(30%) sepia(55%) saturate(1897%) hue-rotate(344deg) brightness(96%) contrast(99%);
+                        }
+
+                        &::after {
+                            content: "SOLD";
+                            color: $txt-white-1;
+                            position: absolute;
+                            top: 30px;
+                            right: 90px;
+                            z-index: 1;
+                            font-size: 12px;
+                        }
+                    }
 
                     img {
                         width: 60%;
@@ -597,25 +621,24 @@ export default {
                     &:last-child {
                         border-bottom: none;
                     }
+
+                    .info-deals {
+                        h6 {
+                            &::before {
+                                font-family: "Font Awesome 5 Free";
+                                content: "\f3c5";
+                                display: inline-block;
+                                padding-right: 10px;
+                                font-weight: 900;
+                                font-size: 12px;
+                            }
+                        }
+                    }
                 }
             }
         }
         .special:last-child {
             padding: 0;
-        }
-    }
-
-    .slice {
-        position: absolute;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: $bg-white-3;
-        display: flex;
-        justify-content: center;
-        img {
-            width: 16px;
         }
     }
 </style>
