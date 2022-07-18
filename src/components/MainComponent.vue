@@ -41,6 +41,9 @@
                 <i class="fa-solid fa-circle"></i>
             </div>
         </div>
+
+        <div class="next">NEXT</div>
+        <div class="prev">PREV</div>
     </section>
 
     <!-- SPECIALS -->
@@ -94,7 +97,11 @@
             <div class="info-card">
                 <h3>FRANK BAILEY</h3>
                 <div class="job">Kitchen Porter</div>
-                <div>socials</div>
+                <div class="social-team">
+                    <i :class="socialIcon.Instagram"></i>
+                    <i :class="socialIcon.Twitter"></i>
+                    <i :class="socialIcon.Facebook"></i>
+                </div>
             </div>
         </div>
         <div class="team-card">
@@ -102,7 +109,11 @@
             <div class="info-card">
                 <h3>FRANK BAILEY</h3>
                 <div class="job">Kitchen Porter</div>
-                <div>socials</div>
+                <div class="social-team">
+                    <i :class="socialIcon.Instagram"></i>
+                    <i :class="socialIcon.Twitter"></i>
+                    <i :class="socialIcon.Facebook"></i>
+                </div>
             </div>
         </div>
         <div class="team-card">
@@ -110,7 +121,11 @@
             <div class="info-card">
                 <h3>FRANK BAILEY</h3>
                 <div class="job">Kitchen Porter</div>
-                <div>socials</div>
+                <div class="social-team">
+                    <i :class="socialIcon.Instagram"></i>
+                    <i :class="socialIcon.Twitter"></i>
+                    <i :class="socialIcon.Facebook"></i>
+                </div>
             </div>
         </div>
         <div class="team-card">
@@ -118,7 +133,11 @@
             <div class="info-card">
                 <h3>FRANK BAILEY</h3>
                 <div class="job">Kitchen Porter</div>
-                <div>socials</div>
+                <div class="social-team">
+                    <i :class="socialIcon.Instagram"></i>
+                    <i :class="socialIcon.Twitter"></i>
+                    <i :class="socialIcon.Facebook"></i>
+                </div>
             </div>
         </div>
     </section>
@@ -206,6 +225,12 @@
         </div>
         <div class="special">
             <img src="../assets/img/h3-img-5a.jpg" alt="">
+            <div class="cart-2">
+                <img src="../assets/svg/svg-9.svg" alt="">
+            </div>
+            <div class="circle">
+                <img src="../assets/svg/svg-7.svg" alt="">
+            </div>
         </div>
     </section>
 
@@ -217,7 +242,8 @@
 export default {
     props: {
         pizzaMenu: Array,
-    }
+        socialIcon: Object,
+    },
 }
 </script>
 
@@ -285,6 +311,7 @@ export default {
         height: 495px;
         background-image: url(../assets/img/h3-testimonials-bckgrnd.jpg);
         background-position: -100px ;
+        position: relative;
 
         .washington-review {
             justify-content: center;
@@ -317,6 +344,11 @@ export default {
                     }
                 }
             }
+        }
+
+        .next, .prev {
+            top: 50%;
+            padding-left: 20px;
         }
     }
 
@@ -426,6 +458,9 @@ export default {
 
         .team-card {
             width: calc(100% / 4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: relative;
 
             &::before {
@@ -441,9 +476,8 @@ export default {
             }
 
             .info-card {
-                width: calc(100% - 50px);
-                height: calc(100% - 50px);
-                margin: 25px auto;
+                width: 88%;
+                height: 88%;
                 background-color: $bg-red-3;
                 display: none;
                 // border: 25px solid $border-white-1;
@@ -462,6 +496,13 @@ export default {
                     font-size: 15px;
                     font-weight: 300;
                     padding-bottom: 15px;
+                }
+
+                .social-team {
+                    i {
+                        display: inline-block;
+                        padding-inline: 5px;
+                    }
                 }
             }
 
@@ -670,6 +711,27 @@ export default {
         }
         .special:last-child {
             padding: 0;
+            position: relative;
+
+            .cart-2, .circle {
+                width: 35px;
+                height: 35px;
+                padding: 10px;
+                position: absolute;
+                border-radius: 3px;
+            }
+
+            .cart-2 {
+                top: 0;
+                right: 0;
+                background-color: $bg-white-1;
+            }
+
+            .circle {
+                top: -36px;
+                right: 0;
+                background-color: $bg-red-1;
+            }
         }
     }
 </style>

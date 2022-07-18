@@ -26,6 +26,8 @@
     </nav>
     <div class="jumbotron">
         <img src="../assets/img/h3-rev-img-6.png" alt="jumbo-img">
+        <div class="next">NEXT</div>
+        <div class="prev">PREV</div>
     </div>
   </header>
 </template>
@@ -104,7 +106,7 @@ export default {
                         filter: invert(1);
                         position: absolute;
                         top: 0;
-                        left: -12px;
+                        left: -4px;
                         width: 20px;
                     }
                 }

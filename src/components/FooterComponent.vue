@@ -57,16 +57,19 @@
 
                 <li class="social">
                     <h5>FOLLOW US:</h5>
-                    <i class="fa-brands fa-twitter"></i> 
-                    <i class="fa-brands fa-facebook-f"></i> 
-                    <i class="fa-brands fa-instagram"></i> 
-                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i :class="socialIcon.Twitter"></i>
+                    <i :class="socialIcon.Facebook"></i>
+                    <i :class="socialIcon.Instagram"></i>
+                    <i :class="socialIcon.LinkedIn"></i>
                 </li>
             </ul>
             <h3 class="about-child">THE DON PEPPE CREW FIRST AND FAREMOST VALUES AN AUTHENTIC, WELL BAKED SLICE OF PIZZA.</h3>
             <div class="created-by">
                 <span>Created with <i class="fa-regular fa-heart"></i>. by</span> 
                 <span> Loris Palazzo</span>
+            </div>
+            <div class="logo-v">
+                <img src="../assets/img/h5-logo-divided-header-dark.png" alt="">
             </div>
         </div>
         <!-- Background Right -->
@@ -102,7 +105,10 @@ export default {
                 },
             ]
         }
-    }
+    },
+    props: {
+        socialIcon: Object,
+    },
 }
 </script>
 
@@ -151,30 +157,6 @@ export default {
                     color: $txt-gold-2;
                     font-size: 16px;
                 }
-                // position: relative;
-
-                // &::after {
-                //     font-family: "Font Awesome 5 Free";
-                //     display: inline-block;
-                //     font-weight: 900;
-                //     text-align: right;
-                //     position: absolute;
-                //     top: 10px;
-                //     right: 10px;
-                //     color: $txt-gold-2;
-                // }
-
-                // &:first-child::after {
-                //     content: "\f500";
-                // }
-
-                // &:nth-child(2)::after {
-                //     content: "\f133";
-                // }
-
-                // &:last-child::after {
-                //     content: "\f34e";
-                // }
             }
 
             button {
@@ -204,6 +186,7 @@ export default {
             padding-left: 70px;
             padding-right: 100px;
             flex-wrap: wrap;
+            position: relative;
 
             .about-child {
                 width: calc(100% / 3);
@@ -290,6 +273,14 @@ export default {
                         padding-inline: 2px;
                     }
                 }
+            }
+
+            .logo-v {
+                position: absolute;
+                height: 130px;
+                width: 130px;
+                bottom: 0px;
+                right: 50px;
             }
         }
 

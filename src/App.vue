@@ -4,8 +4,8 @@
       <img src="./assets/svg/svg-4.svg" alt="">
     </div>
     <HeaderComponent :navBeforeImg='navBeforeImg' :navAfterImg='navAfterImg' />
-    <MainComponent :pizzaMenu='pizzaMenu'/>
-    <FooterComponent/>
+    <MainComponent :pizzaMenu='pizzaMenu' :socialIcon='socialIcon'/>
+    <FooterComponent :socialIcon='socialIcon'/>
   </div>
 </template>
 
@@ -64,6 +64,12 @@ export default {
         oldPrice: ''
       },
     ],
+    socialIcon: {
+        Twitter: "fa-brands fa-twitter",
+        Facebook: "fa-brands fa-facebook-f",
+        Instagram: "fa-brands fa-instagram",
+        LinkedIn: "fa-brands fa-linkedin-in",
+      },
     }
   } 
 }
