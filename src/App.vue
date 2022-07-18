@@ -1,7 +1,10 @@
 <template>
   <div id="app">
+    <div class="slice">
+      <img src="./assets/svg/svg-4.svg" alt="">
+    </div>
     <HeaderComponent :navBeforeImg='navBeforeImg' :navAfterImg='navAfterImg' />
-    <MainComponent :pizzaMenu='pizzaMenu' :pizzaSlice='pizzaSlice'/>
+    <MainComponent :pizzaMenu='pizzaMenu'/>
     <FooterComponent/>
   </div>
 </template>
@@ -61,7 +64,6 @@ export default {
         oldPrice: ''
       },
     ],
-    pizzaSlice: require('./assets/svg/svg-4.svg')
     }
   } 
 }
@@ -75,5 +77,21 @@ export default {
   font-family: 'Oswald', sans-serif;
   color: $txt-black-4;
   letter-spacing: 1.2px;
+
+  .slice {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $bg-white-3;
+    display: flex;
+    justify-content: center;
+    img {
+        width: 16px;
+    }
+    z-index: 1;
+  }
 }
 </style>

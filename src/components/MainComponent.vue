@@ -4,15 +4,27 @@
     <section class="intro flex">
         <div class="intro-card">
             <img src="../assets/img/h3-img-1.jpg" alt="">
+            <div class="select-img">
+                <div class="eye flex"><i class="fa-solid fa-eye"></i></div>
+            </div>
         </div>
         <div class="intro-card">
             <img src="../assets/img/h3-img-2.jpg" alt="">
+            <div class="select-img">
+                <div class="eye flex"><i class="fa-solid fa-eye"></i></div>
+            </div>
         </div>
         <div class="intro-card">
             <img src="../assets/img/h3-img-3.jpg" alt="">
+            <div class="select-img">
+                <div class="eye flex"><i class="fa-solid fa-eye"></i></div>
+            </div>
         </div>
         <div class="intro-card">
             <img src="../assets/img/h3-img-4.jpg" alt="">
+            <div class="select-img">
+                <div class="eye flex"><i class="fa-solid fa-eye"></i></div>
+            </div>
         </div>
     </section>
 
@@ -28,10 +40,6 @@
                 <i class="fa-solid fa-circle"></i>
                 <i class="fa-solid fa-circle"></i>
             </div>
-        </div>
-
-        <div class="slice">
-            <img :src="pizzaSlice" alt="pizza-hello">    
         </div>
     </section>
 
@@ -69,20 +77,12 @@
                 </li>
             </ul>
         </div>
-
-        <div class="slice">
-            <img :src="pizzaSlice" alt="pizza-hello">    
-        </div>
     </section>
 
     <!-- BANNER -->
     <section class="banner">
         <div class="banner-in-banner" id="top-banner"></div>
-        <div class="banner-in-banner" id="mid-banner">
-            <div class="slice">
-                <img :src="pizzaSlice" alt="pizza-hello">    
-            </div>
-        </div>
+        <div class="banner-in-banner" id="mid-banner"></div>
         <div class="banner-in-banner" id="bot-banner"></div>
         <h2>GO AHEAD AND<br>BUILD YOUR<br>OWN PIZZA<br>WE WON'T<br>JUDGE!</h2>
     </section>
@@ -121,10 +121,6 @@
                 <div>socials</div>
             </div>
         </div>
-
-        <div class="slice">
-            <img :src="pizzaSlice" alt="pizza-hello">    
-        </div>
     </section>
 
     <!-- TESTIMONIALS -->
@@ -151,10 +147,6 @@
 
     <!-- PIZZA -->
     <section class="pizza">
-
-        <div class="slice">
-            <img :src="pizzaSlice" alt="pizza-hello">    
-        </div>
 
         <div class="pizza-title">
             <h6>CHOOSE YOUR FLAVOR</h6>
@@ -225,7 +217,6 @@
 export default {
     props: {
         pizzaMenu: Array,
-        pizzaSlice: String,
     }
 }
 </script>
@@ -240,6 +231,52 @@ export default {
 
         .intro-card {
             width: calc((100% / 4) - 8px);
+
+            .select-img {
+                height: 100%;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    background-image: url('https://i.pinimg.com/originals/be/f3/86/bef386ecd3ddea8424067f7c0c2048c5.png');
+                    background-size: cover;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                    left: 0px;
+                    opacity: 0.25;
+                }
+
+
+                .eye {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    background-color: $bg-red-3;
+                    color: $txt-white-1;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    z-index: 1;
+                }
+            }
+
+            &:hover {
+                img {
+                    display: none;
+                }
+
+                .select-img {
+                    display: flex;
+
+
+                }
+                
+            }
         }
     }
 
@@ -248,11 +285,6 @@ export default {
         height: 495px;
         background-image: url(../assets/img/h3-testimonials-bckgrnd.jpg);
         background-position: -100px ;
-        position: relative;
-
-        .slice {
-            top: 85%;
-        }
 
         .washington-review {
             justify-content: center;
@@ -292,11 +324,6 @@ export default {
     .specials-container {
         padding: 8px 0;
         align-items: center;
-        position: relative;
-
-        .slice {
-            top: 80%;
-        }
 
         .special {
             width: 50%;
@@ -375,11 +402,6 @@ export default {
         #mid-banner {
             background-position: top;
             height: 50%;
-            position: relative;
-
-            .slice {
-                top: 80%;
-            }
         }
 
         #bot-banner {
@@ -401,21 +423,35 @@ export default {
     // TEAM
     .teams {
         padding-block: 8px;
-        position: relative;
 
         .team-card {
             width: calc(100% / 4);
+            position: relative;
+
+            &::before {
+                content: "";
+                background-image: url('https://i.pinimg.com/originals/be/f3/86/bef386ecd3ddea8424067f7c0c2048c5.png');
+                background-size: cover;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                opacity: 0;
+            }
 
             .info-card {
-                width: 100%;
-                height: 100%;
+                width: calc(100% - 50px);
+                height: calc(100% - 50px);
+                margin: 25px auto;
                 background-color: $bg-red-3;
                 display: none;
-                border: 25px solid $border-white-1;
+                // border: 25px solid $border-white-1;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 color: $txt-white-1;
+                position: relative;
 
                 h3 {
                     font-size: 25px;
@@ -436,10 +472,10 @@ export default {
             &:hover div {
                 display: flex;
             }
-        }
 
-        .slice{
-            top: 80%;
+            &:hover::before {
+                opacity: 0.25;
+            }
         }
     }
 
@@ -461,13 +497,7 @@ export default {
 
     // PIZZA
     .pizza {
-        padding-top: 100px;
-        padding-bottom: 150px;
-        position: relative;
-
-        .slice {
-            top: 28%;
-        }
+        padding-block: 100px;
 
         .pizza-title {
             padding-bottom: 70px;
@@ -491,27 +521,28 @@ export default {
             ul {
                 // nel caso in cui si volessero vedere impostare 
                 // overflow-x auto, impostare justify content baseline e scommentare la scrollbar
-                overflow-x: hidden;
-                justify-content: center;
+                overflow-x: auto;
+                padding-bottom: 50px;
+                // justify-content: center;
 
-                // &::-webkit-scrollbar {
-                //     background-color: #434343;
-                //     width: 16px;
-                //     height: 8px;
-                // }
+                &::-webkit-scrollbar {
+                    background-color: #434343;
+                    width: 16px;
+                    height: 8px;
+                }
 
-                // &::-webkit-scrollbar-track {
-                //     background-color:#2e2e2e81;
-                // }
+                &::-webkit-scrollbar-track {
+                    background-color:#2e2e2e81;
+                }
 
-                // &::-webkit-scrollbar-thumb {
-                //     background-color: #a4a4a4;
-                //     border-radius: 16px;
-                // }
+                &::-webkit-scrollbar-thumb {
+                    background-color: #a4a4a4;
+                    border-radius: 16px;
+                }
 
-                // &::-webkit-scrollbar-button {
-                //     display:none;
-                // }
+                &::-webkit-scrollbar-button {
+                    display:none;
+                }
 
                 li {
                     width: calc(100% / 5.2);
