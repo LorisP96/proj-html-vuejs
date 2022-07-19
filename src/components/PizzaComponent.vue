@@ -34,8 +34,8 @@ export default {
     padding-block: 100px;
 
     .pizza-title {
-        padding-bottom: 70px;
-        width: 40%;
+        padding-bottom: 100px;
+        width: 30%;
         margin: 0 auto;
         text-align: center;
 

@@ -50,9 +50,7 @@ export default {
     align-items: center;
 
     .special {
-        width: 50%;
-        padding-left: 200px;
-        padding-right: 310px;
+        // style.scss
         
         h2 {
             font-size: 30px;

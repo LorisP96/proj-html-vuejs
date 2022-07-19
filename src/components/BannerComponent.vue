@@ -47,7 +47,7 @@ export default {
         transform: translate(-50%, -50%);
         width: 500px;
         color: $txt-white-1;
-        font-size: 55px;
+        font-size: 60px;
         line-height: 60px;
     }
 }

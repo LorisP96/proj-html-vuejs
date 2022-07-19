@@ -71,6 +71,7 @@ export default {
         font-size: 10px;
     }
     .special:first-child {
+        // style.scss
         background-color: $bg-black-1;
         color: $txt-white-1;
         padding-block: 110px;
@@ -128,6 +129,7 @@ export default {
         }
     }
     .special:last-child {
+        // style.scss
         padding: 0;
         position: relative;
 
